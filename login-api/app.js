@@ -7,9 +7,10 @@ var api = require("./routes/api");
 
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: true}));
-app.use(cors());
+//app.use(cors());
 
-mongoose.connect('mongodb://localhost:27017/auth_test', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost:27017/auth_test', 
+    { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.use('/api', api);
 
