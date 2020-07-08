@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MainService } from '../main.service';
+import { Observable } from 'rxjs';
+import { Person } from '../person';
 
 @Component({
   selector: 'app-people',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PeopleComponent implements OnInit {
 
-  constructor() { }
+  people$: Observable<Person[]>;
+
+  constructor(
+    private mainService: MainService
+  ) { }
 
   ngOnInit(): void {
+    this.people$ = this.mainService.getPeople();
   }
 
 }
