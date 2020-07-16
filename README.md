@@ -17,3 +17,9 @@ Projeto angular para autenticação com backend node.
 # - ng g i main/person
 # - ng g i main/product
 # - ng g s main/main
+# - ng g m -m app Auth --routing
+# - ng g c auth/login
+# - ng g c auth/register
+# - ng g i auth/User
+# - ng g s auth/auth
+
