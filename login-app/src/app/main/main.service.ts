@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { Product } from './product';
 import { Person } from './person';
+import { Product } from './product';
 
 import { catchError, tap } from 'rxjs/operators';
 
@@ -13,9 +13,7 @@ export class MainService {
 
   readonly url = 'http://localhost:3000/api';
 
-  constructor(
-    private http: HttpClient
-  ) { }
+  constructor(private http: HttpClient) { }
 
   getPeople(): Observable<Person[]> {
     return this.http.get<Person[]>(`${this.url}/people`)
@@ -25,7 +23,7 @@ export class MainService {
           console.log(e);
           return throwError(e);
         })
-      );
+      ); ''
   }
 
   getProducts(): Observable<Product[]> {
